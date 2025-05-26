@@ -1,11 +1,12 @@
 #builder stage 1
-FROM node:22-alpine  as builder
+FROM node:22-alpine  As builder
 
 
 WORKDIR /app
 
 
-COPY package*:.json ./
+COPY package*.json ./
+
 
 
 RUN npm install
@@ -21,10 +22,12 @@ COPY . .
 #stage 2  , server
 
 
-FROM ngnix:alpine
+FROM nginx:alpine
 
 
-COPY --from=builder /app/dist /app/dist /usr/share/nginx/html/
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+
 
 EXPOSE 80
 

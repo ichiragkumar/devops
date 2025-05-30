@@ -44,3 +44,12 @@ kubectl apply -f pod2.yml
 ```bash
 kubectl delete -f pod2.yml
 ``` 
+
+
+# hw to go into running pod and it's container
+```bash
+kubectl exec -it nginx-pod -- /bin/bash
+```
+
+or
+kubectl exec -it nginx-pod -- /bin/bash || kubectl exec -it nginx-pod -- /bin/sh || kubectl exec -it nginx-pod -- bash

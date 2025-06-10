@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: deploy2
+    app: nginx
   name: deploy2
 spec:
   replicas: 2

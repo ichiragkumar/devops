@@ -3,28 +3,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: deploy2
-  name: deploy2
+    app: deploymentfile
+  name: deploymentfile
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: deploy2k
+      app: deploymentfile
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: deploy2
+        app: deploymentfile
     spec:
       containers:
-      - image: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-        name: nginx
+      - image: ngiinx
+        name: ngiinx
         resources: {}
-
-      
-      
 status: {}

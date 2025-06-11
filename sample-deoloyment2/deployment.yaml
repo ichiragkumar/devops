@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-nginx
+  name: deploy-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-nginx
+    spec:
+      containers:
+      - image: ichiragkumar/backendapp:latest
+        name: backendapp
+        ports:
+        - containerPort: 3000
+
+        resources: {}
+status: {}

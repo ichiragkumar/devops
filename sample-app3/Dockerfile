@@ -1,5 +1,5 @@
 #stage 1
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 
 WORKDIR /app
@@ -24,7 +24,9 @@ WORKDIR /app
 COPY --from=builder /app /app
 
 
-EXPOSE 3000
+EXPOSE 3005
 
 
-CMD ["node","dist/index.js"]
+
+CMD ["node", "dist/index.js"]
+

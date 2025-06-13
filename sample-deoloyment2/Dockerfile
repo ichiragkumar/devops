@@ -1,5 +1,5 @@
 # --- Stage 1: Dependencies ---
-FROM node:alpine AS deps
+FROM node:alpine As deps
 
 WORKDIR /app
 

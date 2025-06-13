@@ -18,9 +18,9 @@ spec:
         app: sample-app-deploy
     spec:
       containers:
-      - image: ichiragkumar/backendapp2
-        name: backendapp2
+      - image: ichiragkumar/backendapp2:6
+        name: backendapp2 
         ports:
-        - containerPort: 3000
+        - containerPort: 3005
         resources: {}
 status: {}

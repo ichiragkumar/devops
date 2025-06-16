@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deploy
+  labels:
+    app: sample-app-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app-deploy
+  template:
+    metadata:
+      labels:
+        app: sample-app-deploy
+    spec:
+      containers:
+      - name: backendapp2
+        image: ichiragkumar/backendapp2:6
+        envFrom:
+        - configMapRef:
+            name: sample-cm
+        ports:
+        - containerPort: 3005

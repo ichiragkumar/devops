@@ -20,6 +20,17 @@ spec:
       containers:
       - image: ichiragkumar/backendapp2:6
         name: backendapp2 
+        env:
+        - name: FIRST_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: sample-cm
+              key: first
+        - name: LAST_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: sample-cm
+              key: last
         ports:
         - containerPort: 3005
         resources: {}
